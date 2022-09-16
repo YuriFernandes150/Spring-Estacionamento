@@ -11,7 +11,7 @@ Antes de utilizar a API, certifique-se de configurar o seu banco de dados SQL ![
 
 ### POST
 Para cadastrar um novo veículo, utiliza-se a URL em um método POST, enviando o seguinte JSON.
-```
+``` json
 {
     "parkingSpotNumber": "0002",
     "licensePlateNumber": "BDE8000",
@@ -25,7 +25,7 @@ Para cadastrar um novo veículo, utiliza-se a URL em um método POST, enviando o
 
 ```
 Em caso de sucesso, a API retornará:
-```
+``` json
 {
     "id": "a7d2a737-24a1-4241-a046-7f8176e819e6",
     "parkingSpotNumber": "0001",
@@ -46,7 +46,7 @@ Existem checagens para outros campos.
 ### GET
 Para buscar os registros, utilize a URL através do método **GET**. A API permite buscar todos os registros de uma vez:
 
-```
+``` json
 {
     "content": [
         {
@@ -79,7 +79,7 @@ Para buscar os registros, utilize a URL através do método **GET**. A API permi
 Para buscar um único registro, utiliza-se o campo `id` junto da URL. Utilizando o exemplo acima, podemos buscar assim:
 Mandando um **GET** para a URL `http://localhost:8080/parking-spot/f3ded2e6-cc8a-47db-8678-4245a5e07966`
 Teremos:
-```
+``` json
 {
     "id": "f3ded2e6-cc8a-47db-8678-4245a5e07966",
     "parkingSpotNumber": "0002",
@@ -97,7 +97,7 @@ Teremos:
 ### PUT
 Mandando um **PUT**, podemos atualizar dados, lembrando que devemos especificar o id na URL nesse caso.
 Mandando um **PUT** para a URL `http://localhost:8080/parking-spot/f3ded2e6-cc8a-47db-8678-4245a5e07966`, enviamos o seguinte JSON:
-```
+``` json
 {
     "parkingSpotNumber": "0002",
     "licensePlateNumber": "BDE8007",
@@ -110,7 +110,7 @@ Mandando um **PUT** para a URL `http://localhost:8080/parking-spot/f3ded2e6-cc8a
 }
 ```
 Em caso de sucesso, a API nos retorna um JSON com o id e os novos dados:
-```
+``` json
 {
     "id": "f3ded2e6-cc8a-47db-8678-4245a5e07966",
     "parkingSpotNumber": "0002",
